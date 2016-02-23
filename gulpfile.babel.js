@@ -79,7 +79,8 @@ function images() {
 function inline() {
   return gulp.src('dist/**/*.html')
     .pipe(inliner({
-      css: 'dist/css/app.css'
+      css: 'dist/css/app.css',
+      hover_css: 'src/assets/scss/_hovers.css'
     }))
     .pipe(gulp.dest('dist'));
 }
@@ -105,7 +106,7 @@ function watch() {
 function inliner(options) {
   var cssPath = options.css;
   var cssMqPath = cssPath.replace(/\.css$/, '-mq.css');
-  var cssHoverPath = cssPath.replace('src/assets/scss/_hovers.css');
+  var cssHoverPath = options.hover_css;
 
   // Extracts media query-specific CSS into a separate file
   mq(cssPath, cssMqPath, [
@@ -114,9 +115,15 @@ function inliner(options) {
 
   var pipe = lazypipe()
     .pipe($.inlineCss)
+    .pipe($.inject, gulp.src(cssHoverPath), {
+      name: 'hover',
+      transform: function(path, file) {
+        return '<style type="text/css">\n' + file.contents.toString() + '\n</style>';
+      }
+    })
     .pipe($.inject, gulp.src(cssMqPath), {
       transform: function(path, file) {
-        return '<style>\n' + file.contents.toString() + '\n</style>';
+        return '<style type="text/css">\n' + file.contents.toString() + '\n</style>';
       }
     })
     .pipe($.htmlmin, {
