@@ -1,9 +1,11 @@
 @import 'settings';
 
+
 // For media query breakpoint
 $small-range: ($container-width + $grid-column-gutter);
 
-// Modified Allihoopa Foundation
+
+// Slimmed down Foundation styles
 @import
   'util/util',
   // 'global', // This should have never been here - settings should override it
@@ -13,18 +15,16 @@ $small-range: ($container-width + $grid-column-gutter);
   'components/alignment',
   'components/visibility',
   'components/type',
-  // 'components/button',
-  // 'components/callout',
-  // 'components/thumbnail',
-  // 'components/menu',
   'components/outlook-first',
   'components/media-query';
 
-// Our own modules
-// Hover styles are not here, they are in style tag, not inlined
+
+// Our own button
 @import 'ah_button';
 
-// My overrides
+
+// Start overrides
+//////////////////
 
 $logo-width: 120px;
 $logo-height: 37px;
@@ -79,14 +79,22 @@ body {
 
 .footer p,
 .footer p small {
-	font-size: 10px;
-  line-height: 14px;
+	font-size: $small-font-size;
+  line-height: 15px;
   color: #7a7a7a;
 }
 .footer p small a {
 	color: #555555 !important;
   font-weight: bold;
   text-decoration: underline;  
+}
+
+// Typography
+
+h1, 
+h2, 
+h3 {
+	color: #624763;
 }
 
 // Links
@@ -106,10 +114,11 @@ h6 a {
   text-decoration: none;
 }
 
-// Text padding (in _type.scss)
 
-// Mobile
+// Mobile styles
 @media only screen and (max-width: #{$small-range}) {
+
+	// Less text padding ( desktop styles in _type.scss)
   table[class="body"] .right-text-pad {
     padding-left: 10px !important;
   }
