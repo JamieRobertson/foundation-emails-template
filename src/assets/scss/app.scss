@@ -30,8 +30,8 @@ $logo-width: 120px;
 $logo-height: 37px;
 
 // General
-body {
-  background-color: #eeeeee;
+body, table.body {
+  background-color: #f2f2f2;
 }
 
 .container {
@@ -114,6 +114,15 @@ h6 a {
   text-decoration: none;
 }
 
+// Popout 
+.popout img {
+	-ms-transform: scale(1.52); -o-transform: scale(1.52); -moz-transform: scale(1.52); -webkit-transform: scale(1.52); transform: scale(1.52); 
+	-ms-transform-origin: center bottom; -o-transform-origin: center bottom; -moz-transform-origin: center bottom; -webkit-transform-origin: center bottom; transform-origin: center bottom; 
+	width: 480px;
+	height: 145px;
+}
+	
+
 
 // Mobile styles
 @media only screen and (max-width: #{$small-range}) {
@@ -144,4 +153,10 @@ h6 a {
 		margin-left: auto !important;
 		margin-right: auto !important; 
 	}	
+}
+
+@media only screen and (max-width: 745px) {
+		table[class="body"] th.popout {
+			overflow: hidden !important;
+		}
 }
