@@ -4,3 +4,5 @@ npm-debug.log
 bower_components
 dist
 .sass-cache
+src/partials/ampscript_segment_key.html
+concepts

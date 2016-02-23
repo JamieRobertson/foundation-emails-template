@@ -1,0 +1,53 @@
+// Buttons
+
+$ah-pink: #FF27FF;
+$white: #FFFFFF;
+
+.button a.btn {
+  cursor: pointer;
+  text-decoration: none !important;
+  display: inline-block;
+  font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  mso-line-height-rule: exactly;
+  line-height: 35px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: $grid-column-gutter;
+  padding-right: $grid-column-gutter;
+  -webkit-font-smoothing: antialiased;
+}
+
+.button a.btn.btn-primary {
+  color: $white !important;
+  background-color: $ah-pink;
+  border: 1px solid $ah-pink;
+  // For outlook button text  
+  font {
+    color: $white !important;
+    text-decoration: none !important;
+  }
+}
+
+.button a.btn.btn-secondary {
+  color: $ah-pink !important;
+  background-color: $white;
+  border: 1px solid $ah-pink;
+  // For outlook button text
+  font {
+    color: $ah-pink !important;
+    text-decoration: none !important;
+  }
+}
+
+// For outlook VML button wrapper
+.button v {
+  height: 35px;
+  v-text-anchor: middle;
+  mso-line-height-rule: exactly;
+  line-height: 35px;
+}

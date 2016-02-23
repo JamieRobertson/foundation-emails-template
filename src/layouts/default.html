@@ -1,20 +1,19 @@
-{{!-- This is the base layout for your project, and will be used on every page. --}}
-
-<!doctype html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="css/app.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width">
-    <!-- inject:css -->
-    <!-- endinject -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
   </head>
   <body>
+  <div class="preheader" style="display: none !important; font-size: 1px">%%= v(@Preheader) =%%</div>
+  <!-- inject:css -->
+  <!-- endinject -->
     <table class="body">
       <tr>
         <td class="center" align="center" valign="top">
           <center>
-            {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened emails are created. --}}
             {{> body}}
           </center>
         </td>

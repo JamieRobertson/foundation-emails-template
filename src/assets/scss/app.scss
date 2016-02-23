@@ -1,2 +1,138 @@
 @import 'settings';
-@import 'foundation';
+
+// For media query breakpoint
+$small-range: ($container-width + $grid-column-gutter);
+
+// Modified Allihoopa Foundation
+@import
+  'util/util',
+  // 'global', // This should have never been here - settings should override it
+  'components/normalize',
+  'grid/grid',
+  'grid/block-grid',
+  'components/alignment',
+  'components/visibility',
+  'components/type',
+  // 'components/button',
+  // 'components/callout',
+  // 'components/thumbnail',
+  // 'components/menu',
+  'components/outlook-first',
+  'components/media-query';
+
+// Our own modules
+// Hover styles are not here, they are in style tag, not inlined
+@import 'ah_button';
+
+// My overrides
+
+$logo-width: 120px;
+$logo-height: 37px;
+
+// General
+body {
+  background-color: #eeeeee;
+}
+
+.container {
+ background-color: $white;
+}
+
+// Header
+.container.header {
+  background: transparent !important;
+  margin-bottom: 8px;
+  padding: 0 0 5px;
+  img.logo {
+  	width: $logo-width;
+		height: $logo-height;
+		float: none;
+  }
+  .view-email-link {
+  	vertical-align: bottom;
+  	p {
+  		text-align: right !important;
+  		margin-bottom: 6px !important;
+  		@extend .hide-for-small;
+  		a {
+  			color: #555555 !important;
+  		}
+  	}
+  }
+}
+
+// Preheader
+.preheader {
+  font-size: 1px;
+  display: none !important;
+}
+
+// Footer
+.container.footer, 
+.container.footer .wrapper {
+  background: transparent !important;
+}
+
+.footer h5 {
+  padding-bottom: 10px;
+}
+
+.footer p,
+.footer p small {
+	font-size: 10px;
+  line-height: 14px;
+  color: #7a7a7a;
+}
+.footer p small a {
+	color: #555555 !important;
+  font-weight: bold;
+  text-decoration: underline;  
+}
+
+// Links
+a, 
+p a {
+	color: #3399cc;
+  text-decoration: none;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: #4a4a4a;
+  text-decoration: none;
+}
+
+// Text padding (in _type.scss)
+
+// Mobile
+@media only screen and (max-width: #{$small-range}) {
+  table[class="body"] .right-text-pad {
+    padding-left: 10px !important;
+  }
+
+  table[class="body"] .left-text-pad {
+    padding-right: 10px !important;
+  }
+
+  table[class="body"] .text-pad {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+	// Remove button padding
+	// table[class="body"] .button a.btn {
+	// 	padding: 0 !important; 
+	// }	
+
+	// Keep logo size on mobile
+	table[class="body"] .header img.logo {
+		width: $logo-width !important;
+		height: $logo-height !important;
+		margin-left: auto !important;
+		margin-right: auto !important; 
+	}	
+}

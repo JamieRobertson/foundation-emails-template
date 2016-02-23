@@ -39,10 +39,17 @@ function pages() {
     .pipe(panini({
       root: 'src/pages',
       layouts: 'src/layouts',
-      partials: 'src/partials'
+      partials: 'src/partials',
+      helpers: 'src/helpers',
+      data: 'src/data'
     }))
     .pipe(gulp.dest('dist'));
 }
+
+// function parseInk() {
+//   return gulp.src(['src/pages/**/*.html', 'src/partials/**/*.html'])
+//     .pipe(inky())
+// }
 
 // Reset Panini's cache of layouts and partials
 function resetPages(done) {
@@ -80,7 +87,8 @@ function inline() {
 // Start a server with LiveReload to preview the site in
 function server(done) {
   browser.init({
-    server: 'dist'
+    server: 'dist',
+    open: false  // Stop the browser from automatically opening
   });
   done();
 }
@@ -97,10 +105,11 @@ function watch() {
 function inliner(options) {
   var cssPath = options.css;
   var cssMqPath = cssPath.replace(/\.css$/, '-mq.css');
+  var cssHoverPath = cssPath.replace('src/assets/scss/_hovers.css');
 
   // Extracts media query-specific CSS into a separate file
   mq(cssPath, cssMqPath, [
-    'only screen and (max-width: 580px)|' + cssMqPath
+    'only screen and (max-width: 500px)|' + cssMqPath
   ]);
 
   var pipe = lazypipe()

@@ -1,0 +1,31 @@
+// General hovers
+p a:hover, p a:active, p a:visited, 
+a:hover, a:active, a:visited {
+	color: #3399cc !important;
+	text-decoration: underline !important;
+}
+
+// Header hovers
+h1 a:hover, h1 a:active, h1 a:visited,
+h2 a:hover, h2 a:active, h2 a:visited,
+h3 a:hover, h3 a:active, h3 a:visited,
+h4 a:hover, h4 a:active, h4 a:visited,
+h5 a:hover, h5 a:active, h5 a:visited,
+h6 a:hover, h6 a:active, h6 a:visited {
+  color: #4a4a4a !important;
+  text-decoration: underline !important;
+}
+
+// Button hover
+table[class="body"] a.btn.btn-primary:hover,
+.ExternalClass a.ecxbtn.ecxbtn-primary:hover {
+  background-color: #a700a7 !important;
+  border-color: #a700a7 !important;
+}
+
+// Footer links hover
+.footer p a:hover, 
+.footer p small a:hover, 
+.view-email-link p:hover {
+	color: #555555 !important;
+}
