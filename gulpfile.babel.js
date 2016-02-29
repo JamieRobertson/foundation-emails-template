@@ -105,12 +105,16 @@ function watch() {
 // Inlines CSS into HTML, adds media query CSS into the <style> tag of the email, and compresses the HTML
 function inliner(options) {
   var cssPath = options.css;
-  var cssMqPath = cssPath.replace(/\.css$/, '-mq.css');
+  var cssMqPath_sm = cssPath.replace(/\.css$/, '500-mq.css');
+  var cssMqPath_md = cssPath.replace(/\.css$/, '745-mq.css');
   var cssHoverPath = options.hover_css;
 
   // Extracts media query-specific CSS into a separate file
-  mq(cssPath, cssMqPath, [
-    'only screen and (max-width: 500px)|' + cssMqPath
+  mq(cssPath, cssMqPath_sm, [
+    'only screen and (max-width: 500px)|' + cssMqPath_sm
+  ]);
+  mq(cssPath, cssMqPath_md, [
+    'only screen and (max-width: 745px)|' + cssMqPath_md
   ]);
 
   var pipe = lazypipe()
@@ -121,7 +125,7 @@ function inliner(options) {
         return '<style type="text/css">\n' + file.contents.toString() + '\n</style>';
       }
     })
-    .pipe($.inject, gulp.src(cssMqPath), {
+    .pipe($.inject, gulp.src([cssMqPath_sm, cssMqPath_md]), {
       transform: function(path, file) {
         return '<style type="text/css">\n' + file.contents.toString() + '\n</style>';
       }
