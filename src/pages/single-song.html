@@ -1,0 +1,115 @@
+<container class="header">
+  <br />
+  <row class="collapse">
+    <columns small="12" large="6">
+      <a href="https://allihoopa.com/">
+        <img src="http://image.email.propellerheads.se/lib/fe9912747566017974/m/1/email-allihoopa-logo.png" class="logo" />
+      </a>
+    </columns>
+    <columns small="12" large="6" class="view-email-link">
+      <p><small><a href="%%view_email_url%%" target="_blank">View this email as a webpage</a></small></p>
+    </columns>
+  </row>
+</container>
+
+<container>
+  <br />
+
+  <!-- Start single song -->
+  <row>
+    <columns small="12" large="3">
+    </columns>
+    <columns small="12" large="6">
+      <a href="#">
+        <img src="http://placehold.it/640" class="center" width="210" height="210" style="width: 210px !important; height: 210px !important;" />
+      </a>
+      <br />
+
+      <row class="collapse">
+        <columns small="3" large="3">
+          {{!-- must remove left padding on play button --}}
+          <a href="#" target="_blank">
+            <img src="http://image.email.propellerheads.se/lib/fe9912747566017974/m/1/allihoopa-play-btn.png" width="40" height="40" style="width: 40px !important; height: 40px !important;" />
+          </a>
+        </columns>
+        <columns small="9" large="9">
+          <p style="line-height: 18px !important;">
+            <small style="color:#575757 !important;font-size:13px !important;">username </small><br />
+            <a href="#" target="_blank" style="line-height:21px !important;"><small style="font-size:18px !important;">title</small></a>
+          </p>
+        </columns>
+      </row>
+    </columns>
+    <columns small="12" large="3">
+    </columns>
+  </row>
+  <!-- End single song -->
+
+  {{!-- Button row must be collapsed - 20px padding is on button sides --}}
+  <row class="collapse">
+    <columns small="12" large="12">
+      <center>
+
+        <br />
+        
+          <div class="button">
+
+            <!--[if mso]>
+            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#" style="height:35px; v-text-anchor:middle; color: #ffffff !important; width:256px; mso-line-height-rule: exactly; line-height: 35px;" arcsize="0%" strokecolor="#FF27FF" fillcolor="#FF27FF" class="btn btn-primary">
+            <w:anchorlock/>
+            <center>
+            <![endif]-->
+            <a href="#" target="_blank" class="btn btn-primary">
+              <font>
+                Visit Allihoopa
+              </font>
+            </a>
+            <!--[if mso]>
+            </center>
+            </v:roundrect>
+            <![endif]-->
+
+          </div>
+
+        <br />
+
+      </center>
+    </columns>
+  </row>
+  <br />
+
+  <row class="collapse">
+    <columns class="popout" small="12" large="12">
+      <br />
+      <br />
+      <br />
+      <img src="http://image.email.propellerheads.se/lib/fe9912747566017974/m/1/allihoopa-popout.png" width="480" height="145" />
+    </columns>
+  </row>
+
+</container>
+
+<br />
+
+<container class="footer">
+  <row class="collapse">
+    <columns small="12" large="12">
+      <p><small>
+      This email was sent by: 
+      <span>
+        %%Member_Busname%%<br />
+        %%Member_Addr%%, %%Member_City%%, %%Member_State%%, <br class="hide-for-small" />%%Member_PostalCode%% %%Member_Country%%
+      </span>
+      
+      <br />
+
+      <a href="http://www.exacttarget.com/privacy-policy" alias="Privacy Policy" target="_blank">Privacy Policy</a>&nbsp;&nbsp;&nbsp;
+      <a href="%%profile_center_url%%" alias="Update Profile" target="_blank">Update Profile</a>&nbsp;&nbsp;&nbsp;
+      <a href="%%subscription_center_url%%" alias="Manage Subscriptions" target="_blank">Manage Subscriptions</a>&nbsp;&nbsp;&nbsp;
+      <a href="%%unsub_center_url%%" alias="Unsubscribe" target="_blank">Unsubscribe</a>
+      </small></p>
+    </columns>
+  </row>
+  <br /><br />
+
+</container>
